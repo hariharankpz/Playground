@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Main{ 
+public static void main(String[] args){
+        System.out.println("Enter the String");
+        Scanner in = new Scanner(System.in);
+        String str = in.next();
+        int len = str.length();
+        int[] intArray = new int[26];
+        for(int i = 0; i<26;i++)
+        {
+            intArray[i] = 0;
+        }
+        int count = 0;
+        for(int i = 0;i < len; i++){
+        int n = str.charAt(i) - 97;
+        if (intArray[n] == 0){
+         intArray[n]++;
+        }
+        else
+        break;
+        }
+       for(int i = 0; i<26;i++)
+        {
+        if (intArray[i] == 1)
+        count++;
+        }
+        System.out.print(count);
+    }
+}
